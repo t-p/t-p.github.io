@@ -1,2 +1,3 @@
 name: Your New Jekyll Site
 highlighter: pygments
+exclude: ['Rakefile', 'LICENSE']
