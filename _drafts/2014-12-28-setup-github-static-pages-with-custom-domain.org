@@ -1,7 +1,8 @@
 #+title:         Setup GitHub static Pages with custom domain
 #+date:          2014-12-28
 #+layout:        post
-#+category:      posts
+#+category:      posts setup
+
 
 ** setup CNAME on [[https://github.com][GitHub]]
    - create a file named =CNAME=
@@ -15,7 +16,7 @@
    - redirect you Domain to your GitHub Address
 
    #+BEGIN_HTML
-     <img src=/public/images/screenshot-cloudflare.png />
+     <img src=/assets/article_images/screenshot-cloudflare.png />
    #+END_HTML
 
    - don't forget to transfer your DNS to Cloudflare
