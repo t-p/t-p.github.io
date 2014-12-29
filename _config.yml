@@ -17,37 +17,37 @@ name: 'Thomas Pfeiffer'
 author: 'Thomas Pfeiffer'
 author_image: "/assets/images/author.jpg"
 
-paginate:	5
+paginate: 5
 
-url: "http://myblog.***.***" # the base hostname & protocol for your site
+url: "http://pfeiffer.rocks" # the base hostname & protocol for your site
 baseurl: ""
 
 # social icons and sharing options
 social:
-  - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
+  - icon: twitter
+    url:  https://twitter.com/pfeifdrauf
     desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
     share_link: "&amp;url="
 
-#  - icon:	facebook
-#    url:	https://facebook.com/???
+#  - icon: facebook
+#    url: https://facebook.com/???
 #    desc: Connect with me facebook
 #    share_url: //www.facebook.com/sharer.php
 #    share_title: ?t=
 #    share_link: "&amp;u="
 
-  - icon:	github
-    url:	https://github.com/dirkfabisch
-    desc:	Fork me on github
+  - icon: github
+    url:  https://github.com/t-p
+    desc: Find me on github
     share_url:
     share_title:
     share_link:
 
-#  - icon:	google-plus
-#    url:	https://google.com/???
-#    desc:	Add me on google+
+#  - icon: google-plus
+#    url:  https://google.com/???
+#    desc: Add me on google+
 #    share_url:
 #    share_title:
 #    share_link:
