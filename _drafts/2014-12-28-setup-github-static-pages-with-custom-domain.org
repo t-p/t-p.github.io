@@ -10,7 +10,7 @@ with a custom domain.
    - [[https://pages.github.com/][create a static Website]]
    - [[https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/][setup custom domain on GitHub]]
 ** setup CloudFlare
-   - sign up a free Account on CloudFlare
+   - sign up a free Account on [[https://www.cloudflare.com/][CloudFlare]]
    - follow the steps and transfer your DNS to CloudFlare
    - redirect you Domain to your GitHub Address
 
