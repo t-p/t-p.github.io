@@ -3,22 +3,17 @@
 #+layout:        post
 #+category:      posts setup
 
-Below I will describe the steps I took to setup GitHub static pages
-with my own domain name.
+Below are some short steps and links to setup GitHub staic pages
+with a custom domain.
 
-** setup a CNAME on GitHub
-   - create a file named =CNAME=
-   - put your domain name in there
-
-   #+BEGIN_SRC sh
-     example.com
-   #+END_SRC
-
+** setup your Page on GitHub
+   - [[https://pages.github.com/][create a static Website]]
+   - [[https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/][setup custom domain on GitHub]]
 ** setup CloudFlare
+   - sign up a free Account on CloudFlare
+   - follow the steps and transfer your DNS to CloudFlare
    - redirect you Domain to your GitHub Address
 
    #+BEGIN_HTML
      <img src=/assets/article_images/screenshot-cloudflare.png />
    #+END_HTML
-
-   - don't forget to transfer your DNS to Cloudflare
