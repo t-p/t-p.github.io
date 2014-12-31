@@ -1,29 +1,39 @@
----
----
 <!DOCTYPE html>
 <html>
+
   {% include head.html %}
+
   <body itemscope itemtype="http://schema.org/Article">
+
     {% include header.html %}
-    <main class="content" role="main">
-      <article class="post">
-        <div class="noarticleimage">
-          <div class="post-meta">
-            <h1 class="post-title">{{ page.title }}</h1>
-            <div class="cf post-meta-text">
-              Written on
-              <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
-              <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
-            </div>
-          </div>
+
+    <!-- content start -->
+
+    <main class="post" role="main">
+      <article>
+        <h1 class="post-title">{{ page.title }}</h1>
+        <div class="cf post-meta-text">
+          <ul>
+            <li>Written on </li>
+            <li><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time></li>
+            <li class="post-reading-time"></li>
+            <li class="float-right"> to read</li>
+          </ul>
+
+          <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
         </div>
+
+        <!-- article body start -->
+
         <section class="post-content">
           <div class="post-reading">
-            <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
           {{content}}
         </section>
+
+        <!-- article body end -->
+
         <footer class="post-footer">
           <section class="share">
             {% for social in site.social %}
@@ -36,6 +46,7 @@
             {% endfor %}
           </section>
         </footer>
+
         <div class="bottom-teaser cf">
           <div class="isLeft">
             <h5 class="index-headline featured"><span>Written by</span></h5>
@@ -59,18 +70,13 @@
             </footer>
           </div>
         </div>
+
       </article>
     </main>
-    <div class="bottom-closer">
-      <div class="background-closer-image" {%if site.cover %} style="background-image: url({{ site.cover }})"{% endif %}>
-        Image
-      </div>
-      <div class="inner">
-        <h1 class="blog-title">{{ site.title }}</h1>
-        <h2 class="blog-description">{{ site.description }}</h2>
-        <a href="/" class="btn">Back to Overview</a>
-      </div>
-    </div>
+
+    <!-- content end -->
+
+    {% include footer-post.html %}
     {% include javascripts.html %}
   </body>
 </html>
