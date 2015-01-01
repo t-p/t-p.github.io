@@ -129,9 +129,10 @@ body
   @include box-sizing(border-box)
   @include respond-to(800)
     padding: 0 $rs*2
+  hr
+    border-top: 1px dotted #b3b3b1
+    margin: 0 120px
   article
-    padding: 20px 0
-    border-bottom: 1px solid #f2f2f0
     &:last-child
       border-bottom: 0px
     .post-header
@@ -157,25 +158,12 @@ body
       color: #666665
     .post-meta
       font-size: 12px
-      color: #666665
+      color: #b3b3b1
       line-height: 30px
+      text-align: center
 
 .post-template .content
   max-width: 700px
-
-//.index-headline
-//  border-top: 1px solid #dededc
-//  margin: 0
-//  padding: 16px 0
-//  span
-//    color: #b3b3b1
-//    font-size: $rs/8*5
-//    text-transform: uppercase
-//    letter-spacing: 1px
-
-//.archive-template
-//  .index-headline.featured
-//    display: none
 
 .pagination
   text-align: center
@@ -193,7 +181,7 @@ body
 
 .site-footer
   margin: 0 auto
-  padding: $rs*3 0
+  padding: $rs 0
   width: 100%
   max-width: 640px
   font-size: $rs/4*3
@@ -207,6 +195,16 @@ body
       color: #333
 
 .post
+  width: 100%
+  max-width: 640px
+  margin: 0 auto
+  @include box-sizing(border-box)
+  @include respond-to(800)
+    padding: 0 $rs*2
+  article
+    padding-top: 40px
+  hr
+    border-top: 1px dotted #b3b3b1
   .post-image-image
     background-size: cover
     position: absolute
@@ -236,7 +234,7 @@ body
     line-height: 1.1
     color: #333
     margin-bottom: 16px
-    //text-shadow: 0px 1px 16px rgba(0,0,0,0.5), 0px 0px 1px rgba(0,0,0,0.5)
+    text-align: center
   .author-image
     display: inline-block
     width: 30px
@@ -251,20 +249,19 @@ body
   .author-name
     display: inline
   .post-meta-text
-    color: #333
-    letter-spacing: -0.02em
+    color: #b3b3b1
     font-weight: 400
     font-style: normal
-    font-size: 14px
+    font-size: 12px
     overflow: hidden
     font-family: $font-sans
     white-space: nowrap
     ul
-      border-bottom: 2px dotted #eee
-      .float-left
-        float: right
-  .post-reading-time
-    float: right
+      border-bottom: 1px dotted #b3b3b1
+      padding-left: 0
+      li
+        display: inline
+        list-style-type: none
   .fa-angle-down
     font-size: 32px
     margin: 64px auto 0
@@ -293,7 +290,7 @@ body
       letter-spacing: -0.02em
       font-weight: 700
       font-style: normal
-      font-size: 28px
+      font-size: 22px
       line-height: 1.2
       margin-bottom: 4px
     p
@@ -308,8 +305,10 @@ body
       -moz-hyphens: auto
       hyphens: auto
     a
-      color: #333
-      text-decoration: underline
+      color: #999
+      text-decoration: none
+      &:hover
+        color: #333
     img
       max-width: 100%
       margin: 0 auto
@@ -353,92 +352,13 @@ body
       padding: 0
       font-weight: 400
       font-style: normal
-      font-size: 23px
+      font-size: 22px
       line-height: 30px
       margin-left: 30px
-      margin-bottom: 12px
-      padding-top: 2px
-      list-style-type: circle
       p
         padding: 0 0 golden-ratio(1rem,  1)
     ol li
       list-style-type: decimal
-  .bottom-teaser
-    padding: 50px 0
-    font-family: $font-sans
-    hr
-      border: 0
-      padding: 0
-      display: block
-      width: 15%
-      margin: 16px 0 16px 100px
-      border: 0px solid #ddd
-      border-top: 1px solid #ddd
-    .isLeft
-      float: left
-      width: 47%
-      @include box-sizing(border-box)
-      @include respond-to(800)
-        width: 100%
-        padding-bottom: $rs*2
-      .index-headline
-        padding-bottom: 32px
-      a
-        color: #000
-        text-decoration: none
-        &:hover
-          color: #333
-          text-decoration: underline
-      .author-image
-        display: block
-        width: 80px
-        height: 80px
-        float: left
-        background-size: cover
-        border-radius: 100%
-        text-indent: -9999px
-      h4
-        font-size: 18px
-        line-height: 1.1
-        font-weight: 700
-        padding: 0
-        margin: 0
-        padding-left: 100px
-      p
-        font-size: 14px
-        line-height: 1.3
-        font-weight: 400
-        padding: 0
-        margin: 0
-        padding-left: 100px
-        &.published
-          color: #999
-    .isRight
-      float: right
-      width: 47%
-      @include box-sizing(border-box)
-      @include respond-to(800)
-        width: 100%
-      .index-headline
-        padding-bottom: 32px
-      .site-footer
-        margin: 0
-        padding: 0
-        color: #333
-        text-align: left
-        font-size: 14px
-        line-height: 1.3
-        color: #999
-        a
-          color: #333
-          text-decoration: none
-          &:hover
-            text-decoration: underline
-        .poweredby
-          display: block
-          padding-bottom: 18px
-          font-weight: 700
-          color: #333
 .share
   text-align: right
   padding: 20px 0 0

@@ -22,10 +22,13 @@ paginate: 5
 url: "http://pfeiffer.rocks" # the base hostname & protocol for your site
 baseurl: ""
 
+sass:
+    style: :compressed
+
 # social icons and sharing options
 social:
   - icon: twitter
-    url:  https://twitter.com/pfeifdrauf
+    url:  https://twitter.com/pfeiffdrauf
     desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
