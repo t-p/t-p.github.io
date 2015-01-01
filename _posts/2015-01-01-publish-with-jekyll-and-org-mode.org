@@ -1,0 +1,25 @@
+#+title:         Publish with jekyll and org-mode
+#+date:          2015-01-01
+#+layout:        post
+
+Writing blog posts with [[http://jekyllrb.com/][jekyll]] and [[http://orgmode.org/][org-mode]] is easier than expected.
+- clone the [[https://github.com/eggcaker/jekyll-org][jekyll-org]] converter into your project
+- write your posts as org files
+- build your site: =jekyll build=
+
+That's it.
+
+The source of this site, written as org file:
+
+#+begin_src org
+#+title:         Publish with jekyll and org-mode
+#+date:          2015-01-01
+#+layout:        post
+
+Writing blog posts with [[http://jekyllrb.com/][jekyll]] and [[http://orgmode.org/][org-mode]] is easier than expected.
+- clone the [[https://github.com/eggcaker/jekyll-org][jekyll-org]] converter into your project
+- write your posts as org files
+- build your site: =jekyll build=
+
+That's it.
+#+end_src
