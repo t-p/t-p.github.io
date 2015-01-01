@@ -1,7 +1,6 @@
 #+title:         Setup GitHub static pages
 #+date:          2014-12-28
 #+layout:        post
-#+category:      posts setup
 
 Below are some short steps and links to setup GitHub staic pages
 with a custom domain.
