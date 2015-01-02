@@ -1,5 +1,6 @@
 #+title:         Setup GitHub static pages
 #+date:          2014-12-28
+#+liquid:        enabled
 #+layout:        post
 
 Below are some short steps and links to setup GitHub staic pages
@@ -12,7 +13,4 @@ with a custom domain.
    - sign up a free Account on [[https://www.cloudflare.com/][CloudFlare]]
    - follow the steps and transfer your DNS to CloudFlare
    - redirect you Domain to your GitHub Address
-
-   #+BEGIN_HTML
-     <img src=/assets/article_images/screenshot-cloudflare.png />
-   #+END_HTML
+   [[{% asset_path screenshot-cloudflare.png %}]]
