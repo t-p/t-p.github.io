@@ -8,15 +8,13 @@ title: "pfeifdrauf"
 description: > # this means to ignore newlines until "email:"
    A Jekyll theme - Medium inspired
 
-email: blog@pfeiffer.rocks
-# blog logo
-logo: "logo.jpg"
-# blog cover
+email:  blog@pfeiffer.rocks
+logo:  "logo.jpg"
 cover: "background-bright.jpg"
 
 name: 'Thomas Pfeiffer'
 author: 'Thomas Pfeiffer'
-author_image: "/assets/images/author.jpg"
+#author_image: "/assets/images/author.jpg"
 
 paginate: 5
 
@@ -28,6 +26,16 @@ assets:
   css_compressor: sass
   cache:          true
 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - LICENSE
+  - .gitignore
+  - .gitmodule
+  - .ruby-gemset
+  - .ruby-version
+
 # social icons and sharing options
 social:
   - icon: twitter
@@ -36,13 +44,6 @@ social:
     share_url: http://twitter.com/share
     share_title: ?text=
     share_link: "&amp;url="
-
-#  - icon: facebook
-#    url: https://facebook.com/???
-#    desc: Connect with me facebook
-#    share_url: //www.facebook.com/sharer.php
-#    share_title: ?t=
-#    share_link: "&amp;u="
 
   - icon: github
     url:  https://github.com/t-p
@@ -57,12 +58,3 @@ social:
 #    share_url:
 #    share_title:
 #    share_link:
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - Rakefile
-  - LICENSE
-  - .gitignore
-  - .gitmodule
-  - .ruby-gemset
-  - .ruby-version
