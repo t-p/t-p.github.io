@@ -1,3 +1,4 @@
+---
 # Build settings
 markdown: redcarpet
 highlighter: pygments
@@ -9,9 +10,9 @@ description: > # this means to ignore newlines until "email:"
 
 email: blog@pfeiffer.rocks
 # blog logo
-logo: "/assets/images/tp-logo.jpg"
+logo: "logo.jpg"
 # blog cover
-cover: "/assets/images/background-bright.jpg"
+cover: "background-bright.jpg"
 
 name: 'Thomas Pfeiffer'
 author: 'Thomas Pfeiffer'
@@ -22,8 +23,10 @@ paginate: 5
 url: "http://pfeiffer.rocks" # the base hostname & protocol for your site
 baseurl: ""
 
-sass:
-    style: :compressed
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass
+  cache:          true
 
 # social icons and sharing options
 social:
@@ -54,3 +57,12 @@ social:
 #    share_url:
 #    share_title:
 #    share_link:
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - LICENSE
+  - .gitignore
+  - .gitmodule
+  - .ruby-gemset
+  - .ruby-version
