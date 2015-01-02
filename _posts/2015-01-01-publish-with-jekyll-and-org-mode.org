@@ -2,7 +2,7 @@
 #+date:          2015-01-01
 #+layout:        post
 
-Writing blog posts with [[http://jekyllrb.com/][jekyll]] and [[http://orgmode.org/][org-mode]] is easier than expected.
+Writing blog posts with [[http://jekyllrb.com/][jekyll]] and emacs [[http://orgmode.org/][org-mode]] is easier than expected.
 - clone the [[https://github.com/eggcaker/jekyll-org][jekyll-org]] converter into your project
 - write your posts as org files
 - build your site: =jekyll build=
@@ -16,7 +16,7 @@ The source of this site, written as org file:
 #+date:          2015-01-01
 #+layout:        post
 
-Writing blog posts with [[http://jekyllrb.com/][jekyll]] and [[http://orgmode.org/][org-mode]] is easier than expected.
+Writing blog posts with [[http://jekyllrb.com/][jekyll]] and emacs [[http://orgmode.org/][org-mode]] is easier than expected.
 - clone the [[https://github.com/eggcaker/jekyll-org][jekyll-org]] converter into your project
 - write your posts as org files
 - build your site: =jekyll build=
