@@ -1,10 +1,20 @@
-require 'rubygems'
-require 'rake'
-require 'rdoc'
-require 'date'
-require 'yaml'
-require 'tmpdir'
-require 'jekyll'
+require "rubygems"
+require "tmpdir"
+
+require "bundler/setup"
+require "jekyll"
+
+
+def say_what? message
+  print message
+  STDIN.gets.chomp
+end
+
+
+def sluggize str
+  str.downcase.gsub(/[^a-z0-9]+/, '-').gsub(/^-|-$/, '');
+end
+
 
 desc "Generate blog files"
 task :generate do
@@ -18,17 +28,39 @@ end
 desc "Generate and publish blog to gh-pages"
 task :publish => [:generate] do
   Dir.mktmpdir do |tmp|
-    system "mv _site/* #{tmp}"
-    system "git checkout -B master"
-    system "rm -rf *"
-    system "mv #{tmp}/* ."
-    message = "Updated Site at #{Time.now.utc}"
+    cp_r "_site/.", tmp
+    Dir.chdir tmp
+    system "git init"
     system "git add ."
-    system "git commit -am #{message.shellescape}"
+    message = "Site updated at #{Time.now.utc}"
+    system "git commit -m #{message.inspect}"
+    system "git remote add origin git@github.com:t-p/t-p.github.io.git"
     system "git push origin master --force"
-    system "git checkout source"
-    system "echo Done!"
+    system "echo all Done!"
   end
 end
 
-task :default => :publish
+
+desc "Create a new post"
+task :new do
+  title     = say_what?('Title: ')
+  filename  = "_posts/#{Time.now.strftime('%Y-%m-%d')}-#{sluggize title}.md"
+
+  if File.exist? filename
+    puts "Can't create new post: \e[33m#{filename}\e[0m"
+    puts "  \e[31m- Path already exists.\e[0m"
+    exit 1
+  end
+
+  File.open(filename, "w") do |post|
+    post.puts "title:     #{title}"
+    post.puts "date:      #{Time.now.strftime('%Y-%m-%d')}"
+    post.puts "liquid:    enabled"
+    post.puts "layout:    post"
+    post.puts ""
+    post.puts "Once upon a time..."
+  end
+
+  puts "A new post was created for at:"
+  puts "  \e[32m#{filename}\e[0m"
+end
