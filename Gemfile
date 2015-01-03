@@ -9,8 +9,8 @@ gem "bourbon"
 # org-mode converter
 gem "org-ruby"
 
-# a asset pipline
 gem "jekyll-assets"
+gem 'jekyll-sitemap'
 
 # additional gems for jekyll-assets
 gem "coffee-script"

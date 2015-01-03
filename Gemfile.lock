@@ -161,6 +161,7 @@ DEPENDENCIES
   coffee-script
   github-pages
   jekyll-assets
+  jekyll-sitemap
   org-ruby
   sass
   uglifier
