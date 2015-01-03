@@ -44,7 +44,7 @@ end
 desc "Create a new post"
 task :new do
   title     = say_what?('Title: ')
-  filename  = "_posts/#{Time.now.strftime('%Y-%m-%d')}-#{sluggize title}.md"
+  filename  = "_posts/#{Time.now.strftime('%Y-%m-%d')}-#{sluggize title}.org"
 
   if File.exist? filename
     puts "Can't create new post: \e[33m#{filename}\e[0m"
@@ -53,10 +53,10 @@ task :new do
   end
 
   File.open(filename, "w") do |post|
-    post.puts "title:     #{title}"
-    post.puts "date:      #{Time.now.strftime('%Y-%m-%d')}"
-    post.puts "liquid:    enabled"
-    post.puts "layout:    post"
+    post.puts "#+title:  #{title}"
+    post.puts "#+date:   #{Time.now.strftime('%Y-%m-%d')}"
+    post.puts "#+liquid: enabled"
+    post.puts "#+layout: post"
     post.puts ""
     post.puts "Once upon a time..."
   end
