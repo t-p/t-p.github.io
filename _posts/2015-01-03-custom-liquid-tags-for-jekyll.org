@@ -5,6 +5,7 @@
 I wanted to have a shorter CDN link for [[https://fortawesome.github.io/Font-Awesome/get-started/][FontAwesome]] so i created a plugin to keep things tight.
 
 - create a =font-awesome.rb= file inside your =_includes= directory
+- build your CDN link
 - register a new =font_awesome= tag to [[http://liquidmarkup.org/][Liquid]]
 
 #+begin_src ruby
