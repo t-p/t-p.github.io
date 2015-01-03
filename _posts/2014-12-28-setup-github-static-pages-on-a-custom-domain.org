@@ -1,4 +1,4 @@
-#+title:         Setup GitHub static pages
+#+title:         setup GitHub static pages
 #+date:          2014-12-28
 #+liquid:        enabled
 #+layout:        post

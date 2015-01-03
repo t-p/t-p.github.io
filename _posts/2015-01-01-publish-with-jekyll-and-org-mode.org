@@ -1,4 +1,4 @@
-#+title:         Publish with jekyll and org-mode
+#+title:         publish with Jekyll and org-mode
 #+date:          2015-01-01
 #+layout:        post
 

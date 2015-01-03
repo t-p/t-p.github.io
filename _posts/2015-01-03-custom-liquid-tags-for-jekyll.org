@@ -1,4 +1,4 @@
-#+title:  custom liquid tags for jekyll
+#+title:  custom Liquid tags for Jekyll
 #+date:   2015-01-03
 #+layout: post
 
