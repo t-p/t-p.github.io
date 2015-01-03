@@ -1,0 +1,29 @@
+#+title:  custom liquid tags for jekyll
+#+date:   2015-01-03
+#+layout: post
+
+I wanted to have a shorter CDN link for [[https://fortawesome.github.io/Font-Awesome/get-started/][FontAwesome]] so i created a plugin to keep things tight.
+
+- create a =font-awesome.rb= file inside your =_includes= directory
+- register a new =font_awesome= tag to [[http://liquidmarkup.org/][Liquid]]
+
+#+begin_src ruby
+# _includes/font-awesome.rb
+
+module Jekyll
+  module FontAwesomePlugin
+    class Tag < Liquid::Tag
+
+      LINK_TEMPLATE = '<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/%s">'
+
+      def render context
+        LINK_TEMPLATE % @markup.strip.concat("/css/font-awesome.min.css")
+      end
+    end
+  end
+end
+
+Liquid::Template.register_tag "font_awesome", Jekyll::FontAwesomePlugin::Tag
+#+end_src
+
+- add ={% font_awesome 4.2.0 %}= inside your <head> section and your done
