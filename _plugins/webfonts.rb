@@ -31,7 +31,7 @@ module Jekyll
   module WebfontsPlugin
     class Tag < Liquid::Tag
 
-      LINK_TEMPLATE = '<link rel="stylesheet" type="text/css" href="http://brick.a.ssl.fastly.net/%s">'
+      LINK_TEMPLATE = '<link rel="stylesheet" type="text/css" href="//brick.a.ssl.fastly.net/%s">'
 
       def render context
         LINK_TEMPLATE % @markup.split(" ").map(&:strip).join("/")
