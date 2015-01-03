@@ -3,15 +3,13 @@ layout: default
 ---
 
 <div class="teaserimage">
-  <div class="teaserimage-image" {% if site.cover %}style="background-image: url({{ site.cover | asset_path }})"{% endif %}>
+  <div class="teaserimage-image" style="background-image: url({{ site.cover | asset_path }})">
       Teaser Image
   </div>
 </div>
 
 <header class="blog-header">
-  {% if site.logo %}
-    <a class="blog-logo" href="{{site.url}}" style="background-image: url({{ site.logo | asset_path }})">{{ site.title }}</a>
-  {% endif %}
+  <a class="blog-logo" href="{{site.url}}" style="background-image: url({{ site.logo | asset_path }})">{{ site.title }}</a>
   <h1 class="blog-title">{{ site.title }}</h1>
   <h2 class="blog-description">{{ site.description }}</h2>
   <div class="custom-links">
@@ -63,3 +61,5 @@ layout: default
     {% endif %}
   </nav>
 </main>
+
+{% include footer-default.html %}

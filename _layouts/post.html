@@ -1,45 +1,31 @@
-<!DOCTYPE html>
-<html>
+---
+layout: default
+---
+<main class="post" role="main">
+  <article>
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="cf post-meta-text">
+      <ul>
+        <li>Written on </li>
+        <li><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time></li>
+        <li> --- </li>
+        <li class="post-reading-time"></li>
+        <li> to read</li>
+      </ul>
 
-  {% include head.html %}
+      <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
+    </div>
 
-  <body itemscope itemtype="http://schema.org/Article">
+    <!-- article body start -->
+    <section class="post-content">
+      {{content}}
+    </section>
+    <!-- article body end -->
 
-    {% include top-logo.html %}
+    <hr>
 
-    <!-- content start -->
+  </article>
+</main>
 
-    <main class="post" role="main">
-      <article>
-        <h1 class="post-title">{{ page.title }}</h1>
-        <div class="cf post-meta-text">
-          <ul>
-            <li>Written on </li>
-            <li><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time></li>
-            <li> --- </li>
-            <li class="post-reading-time"></li>
-            <li> to read</li>
-          </ul>
-
-          <!-- , tagged on {{#foreach tags}}<span class="post-tag-{{slug}}">{{#if @first}}{{else}}, {{/if}}<a href="/tag/{{slug}}">{{name}}</a></span>{{/foreach}} -->
-        </div>
-
-        <!-- article body start -->
-
-        <section class="post-content">
-          {{content}}
-        </section>
-
-        <!-- article body end -->
-
-        <hr>
-
-      </article>
-    </main>
-
-    <!-- content end -->
-    {% include footer-default.html %}
-    {% include footer-post.html %}
-    {% include javascripts.html %}
-  </body>
-</html>
+{% include footer-default.html %}
+{% include footer-post.html %}
