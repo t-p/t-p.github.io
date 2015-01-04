@@ -12,7 +12,7 @@ That's it.
 The source of this site, written as org file:
 
 #+begin_src org
-#+title:         Publish with jekyll and org-mode
+#+title:         publish with Jekyll and org-mode
 #+date:          2015-01-01
 #+layout:        post
 
