@@ -27,4 +27,4 @@ end
 Liquid::Template.register_tag "font_awesome", Jekyll::FontAwesomePlugin::Tag
 #+end_src
 
-- add ={% font_awesome 4.2.0 %}= inside your <head> section and your done
+- add ={% font_awesome 4.2.0 %}= inside your HTML's =<head>= section and your done
