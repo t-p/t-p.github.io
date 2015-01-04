@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pfeifdrauf</title>
+    <description>my personal scratchpad
+</description>
+    <link>http://pfeiffer.rocks/</link>
+    <atom:link href="http://pfeiffer.rocks/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 04 Jan 2015 15:27:23 +0100</pubDate>
+    <lastBuildDate>Sun, 04 Jan 2015 15:27:23 +0100</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>custom Liquid tags for Jekyll</title>
+        <description>
+&lt;p&gt;I wanted to have a shorter CDN link for &lt;a href=&quot;https://fortawesome.github.io/Font-Awesome/get-started/&quot;&gt;FontAwesome&lt;/a&gt; so i created a plugin to keep things tight.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;create a &lt;code&gt;font-awesome.rb&lt;/code&gt; file inside your &lt;code&gt;_includes&lt;/code&gt; directory&lt;/li&gt;
+  &lt;li&gt;build your CDN link&lt;/li&gt;
+  &lt;li&gt;register a new &lt;code&gt;font_awesome&lt;/code&gt; tag to &lt;a href=&quot;http://liquidmarkup.org/&quot;&gt;Liquid&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c1&quot;&gt;# _includes/font-awesome.rb&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Jekyll&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;FontAwesomePlugin&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Tag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Liquid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Tag&lt;/span&gt;
+
+      &lt;span class=&quot;no&quot;&gt;LINK_TEMPLATE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;//maxcdn.bootstrapcdn.com/font-awesome/%s&amp;quot;&amp;gt;&amp;#39;&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;render&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;context&lt;/span&gt;
+        &lt;span class=&quot;no&quot;&gt;LINK_TEMPLATE&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@markup&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;concat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;/css/font-awesome.min.css&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;no&quot;&gt;Liquid&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Template&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;register_tag&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;font_awesome&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;FontAwesomePlugin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Tag&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;add &lt;code&gt;{% font_awesome 4.2.0 %}&lt;/code&gt; inside your HTML&amp;#8217;s &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; section and your done&lt;/li&gt;
+&lt;/ul&gt;
+
+
+</description>
+        <pubDate>Sat, 03 Jan 2015 00:00:00 +0100</pubDate>
+        <link>http://pfeiffer.rocks/2015/01/03/custom-liquid-tags-for-jekyll.html</link>
+        <guid isPermaLink="true">http://pfeiffer.rocks/2015/01/03/custom-liquid-tags-for-jekyll.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>publish with Jekyll and org-mode</title>
+        <description>
+&lt;p&gt;Writing blog posts with &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;jekyll&lt;/a&gt; and emacs &lt;a href=&quot;http://orgmode.org/&quot;&gt;org-mode&lt;/a&gt; is easier than expected.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;clone the &lt;a href=&quot;https://github.com/eggcaker/jekyll-org&quot;&gt;jekyll-org&lt;/a&gt; converter into your project&lt;/li&gt;
+  &lt;li&gt;write your posts as org files&lt;/li&gt;
+  &lt;li&gt;build your site: &lt;code&gt;jekyll build&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That&amp;#8217;s it.&lt;/p&gt;
+&lt;p&gt;The source of this site, written as org file:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;#+title:         publish with Jekyll and org-mode
+#+date:          2015-01-01
+#+layout:        post
+
+Writing blog posts with [[http://jekyllrb.com/][jekyll]] and emacs [[http://orgmode.org/][org-mode]] is easier than expected.
+- clone the [[https://github.com/eggcaker/jekyll-org][jekyll-org]] converter into your project
+- write your posts as org files
+- build your site: =jekyll build=
+
+That&amp;#39;s it.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+</description>
+        <pubDate>Thu, 01 Jan 2015 00:00:00 +0100</pubDate>
+        <link>http://pfeiffer.rocks/2015/01/01/publish-with-jekyll-and-org-mode.html</link>
+        <guid isPermaLink="true">http://pfeiffer.rocks/2015/01/01/publish-with-jekyll-and-org-mode.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>setup GitHub static pages</title>
+        <description>&lt;p&gt;Below are some short steps and links to setup GitHub staic pages
+  with a custom domain.&lt;/p&gt;
+&lt;h2&gt;setup your Page on GitHub&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;create a static Website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;setup a custom domain on GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;setup CloudFlare&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;sign up a free Account on &lt;a href=&quot;https://www.cloudflare.com/&quot;&gt;CloudFlare&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;follow the steps and transfer your DNS to CloudFlare&lt;/li&gt;
+  &lt;li&gt;redirect you Domain to your GitHub Address&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/screenshot-cloudflare-5506cbf0a57aacb6e8658c52c4010fe0.png&quot; alt=&quot;/assets/screenshot-cloudflare-5506cbf0a57aacb6e8658c52c4010fe0.png&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 28 Dec 2014 00:00:00 +0100</pubDate>
+        <link>http://pfeiffer.rocks/2014/12/28/setup-github-static-pages-on-a-custom-domain.html</link>
+        <guid isPermaLink="true">http://pfeiffer.rocks/2014/12/28/setup-github-static-pages-on-a-custom-domain.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

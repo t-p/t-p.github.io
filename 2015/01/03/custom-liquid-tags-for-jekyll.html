@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <!-- (1) Optimize for mobile versions: http://goo.gl/EOpFl -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- (1) force latest IE rendering engine: bit.ly/1c8EiC9 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>custom Liquid tags for Jekyll</title>
+  <meta name="description" content="my personal scratchpad
+" />
+
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <link rel="canonical" href="http://pfeiffer.rocks/2015/01/03/custom-liquid-tags-for-jekyll.html">
+
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="//brick.a.ssl.fastly.net/Linux+Libertine:400,400i,700,700i/Open+Sans:400,400i,700,700i">
+  <link rel="stylesheet" href="/assets/main-adc7162d4074976eb464cb5c9656a63a.css">
+</head>
+
+
+  <body itemscope itemtype="http://schema.org/Blog">
+
+    <!-- header start -->
+
+<a href="http://pfeiffer.rocks" class="logo-readium">
+    <span class="logo" style="background-image: url(/assets/logo-e4dd9c43c161c98366f2bec1c159e4c2.jpg)"></span>
+</a>
+
+<!-- header end -->
+
+
+    <!-- content start -->
+
+    <div class="page-content">
+      <div class="wrapper">
+        <main class="post" role="main">
+  <article>
+    <h1 class="post-title">custom Liquid tags for Jekyll</h1>
+    <div class="cf post-meta-text">
+      <ul>
+        <li>Written on </li>
+        <li><time datetime="2015-01-03T00:00:00+01:00">03 Jan 2015</time></li>
+        <li> --- </li>
+        <li class="post-reading-time"></li>
+        <li> to read</li>
+      </ul>
+
+      <!-- , tagged on <span class="post-tag-">, <a href="/tag/"></a></span> -->
+    </div>
+
+    <!-- article body start -->
+    <section class="post-content">
+      
+<p>I wanted to have a shorter CDN link for <a href="https://fortawesome.github.io/Font-Awesome/get-started/">FontAwesome</a> so i created a plugin to keep things tight.</p>
+<ul>
+  <li>create a <code>font-awesome.rb</code> file inside your <code>_includes</code> directory</li>
+  <li>build your CDN link</li>
+  <li>register a new <code>font_awesome</code> tag to <a href="http://liquidmarkup.org/">Liquid</a></li>
+</ul>
+<div class="highlight"><pre><span class="c1"># _includes/font-awesome.rb</span>
+
+<span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">module</span> <span class="nn">FontAwesomePlugin</span>
+    <span class="k">class</span> <span class="nc">Tag</span> <span class="o">&lt;</span> <span class="no">Liquid</span><span class="o">::</span><span class="no">Tag</span>
+
+      <span class="no">LINK_TEMPLATE</span> <span class="o">=</span> <span class="s1">&#39;&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;//maxcdn.bootstrapcdn.com/font-awesome/%s&quot;&gt;&#39;</span>
+
+      <span class="k">def</span> <span class="nf">render</span> <span class="n">context</span>
+        <span class="no">LINK_TEMPLATE</span> <span class="o">%</span> <span class="vi">@markup</span><span class="o">.</span><span class="n">strip</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="s2">&quot;/css/font-awesome.min.css&quot;</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Liquid</span><span class="o">::</span><span class="no">Template</span><span class="o">.</span><span class="n">register_tag</span> <span class="s2">&quot;font_awesome&quot;</span><span class="p">,</span> <span class="no">Jekyll</span><span class="o">::</span><span class="no">FontAwesomePlugin</span><span class="o">::</span><span class="no">Tag</span>
+</pre></div>
+<ul>
+  <li>add <code>{% font_awesome 4.2.0 %}</code> inside your HTML&#8217;s <code>&lt;head&gt;</code> section and your done</li>
+</ul>
+
+
+
+    </section>
+    <!-- article body end -->
+
+    <hr>
+
+  </article>
+</main>
+
+<!-- footer start -->
+
+<footer class="site-footer">
+  <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
+  <div class="inner">
+       <section class="copyright">All content copyright <a href="mailto:blog@pfeiffer.rocks">Thomas Pfeiffer</a> &copy; 2015 &bull; All rights reserved.</section>
+       <section class="poweredby">Made with <a href="http://jekyllrb.com"> Jekyll</a></section>
+  </div>
+</footer>
+
+<!-- footer end -->
+
+<div class="bottom-closer">
+  <div class="background-closer-image" style="background-image: url(/assets/background-bright-3b431da0fb386ea22e48b7942e1713c5.jpg)"></div>
+  <div class="inner">
+    <h1 class="blog-title">pfeifdrauf</h1>
+    <h2 class="blog-description">my personal scratchpad
+</h2>
+    <a href="/" class="btn">Back to Overview</a>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <!-- content end -->
+
+    <script src="/assets/main-e118c200d836e8ae235440601a043cbc.js"></script>
+<script src="/assets/vendor/jquery-1.11.2-acff8d3124b3b14f1d9fb9ebf9207ab0.js"></script>
+<script src="/assets/vendor/readingTime-b432ca2fdb419a65c19f5f676e5fbb96.js"></script>
+<script src="/assets/vendor/jquery.fitvids-80de8914a8c7a83b09634ad0303f5826.js"></script>
+
+
+  </body>
+</html>
