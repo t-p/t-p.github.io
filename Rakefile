@@ -4,6 +4,7 @@ require "tmpdir"
 require "bundler/setup"
 require "jekyll"
 
+require "net/http"
 
 def say_what? message
   print message
@@ -63,4 +64,13 @@ task :new do
 
   puts "A new post was created for at:"
   puts "  \e[32m#{filename}\e[0m"
+end
+
+desc "Push sitemap to Google"
+task :ping do
+  SITEMAP_PATH = "https://pfeiffer.rocks/sitemap.xml"
+  url = "http://www.google.com/webmasters/tools/ping?sitemap=#{SITEMAP_PATH}"
+  uri = URI.parse(url)
+  req = Net::HTTP::Get.new(uri.to_s)
+  Net::HTTP.start(uri.host, uri.port) { |http| http.request(req) }
 end
